@@ -1,6 +1,6 @@
-# <a href="https://geotracker-473.herokuapp.com" target="_blank">GeoTracker</a>
+# <a href="/" target="_blank">Cooktrition</a>
 
-A Web application that helps users to reachout to government officials to report their current location and send message. 
+Daily Nutrition Tracking and Recipe App. 
 
 <a href="https://nodejs.org/en/">Node.js</a> | <a href="https://expressjs.com/">Express 4</a> | <a href="https://www.heroku.com/">Heroku Cloud Platform</a> | <a href="http://passportjs.org/">passport js authentication</a> | <a href="https://www.mongodb.com/">MongoDB</a> | <a href="http://mongoosejs.com/">Mongoose ODM</a> | <a href="http://getbootstrap.com/">Bootstrap framework</a>
 
