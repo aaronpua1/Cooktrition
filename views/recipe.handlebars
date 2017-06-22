@@ -1,0 +1,153 @@
+ <div class="container">
+        <div class="row">
+			<div class="col-md-8">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="{{body.image}}" alt="">
+					<hgroup class="mb20">
+						<h2>{{body.title}}</h2>
+						<h4>Time: {{body.readyInMinutes}} minutes</h4>
+						<h4>Servings: {{body.servings}}</h4>					
+					</hgroup>
+					<hgroup class="mb20">
+						<h4>Ingredients: </h4>
+						<ul class="list-group">							
+							{{#each body.extendedIngredients}}
+								<li class="list-group-item">{{amount}} {{unit}} {{name}} </li>
+							{{/each}}
+						</ul>
+					</hgroup>
+					<hgroup class="mb20">
+						<h4>Directions: </h4>
+						<p>{{body.instructions}}</p>
+					</hgroup>
+					<div class="text-center">	
+						<form method="post" action="/">
+							<input class="form-control" type="hidden" name="item_name" value="{{body.title}}">
+							<input class="form-control" type="hidden" name="item_brand" value="Recipe">
+							<input class="form-control" type="hidden" name="calories" value="{{body.nutrition.nutrients.0.amount}}">
+							<input class="form-control" type="hidden" name="calories_percent" value="{{body.nutrition.nutrients.0.percentOfDailyNeeds}}">
+							<input class="form-control" type="hidden" name="total_fat" value="{{body.nutrition.nutrients.1.amount}}">
+							<input class="form-control" type="hidden" name="total_fat_percent" value="{{body.nutrition.nutrients.1.percentOfDailyNeeds}}">
+							<input class="form-control" type="hidden" name="saturated_fat" value="{{body.nutrition.nutrients.2.amount}}">
+							<input class="form-control" type="hidden" name="saturated_fat_percent" value="{{body.nutrition.nutrients.2.percentOfDailyNeeds}}">
+							<input class="form-control" type="hidden" name="cholesterol" value="{{body.nutrition.nutrients.5.amount}}">
+							<input class="form-control" type="hidden" name="cholesterol_percent" value="{{body.nutrition.nutrients.5.percentOfDailyNeeds}}">
+							<input class="form-control" type="hidden" name="sodium" value="{{body.nutrition.nutrients.6.amount}}">
+							<input class="form-control" type="hidden" name="sodium_percent" value="{{body.nutrition.nutrients.6.percentOfDailyNeeds}}">
+							<input class="form-control" type="hidden" name="total_carbohydrate" value="{{body.nutrition.nutrients.3.amount}}">
+							<input class="form-control" type="hidden" name="total_carbohydrate_percent" value="{{body.nutrition.nutrients.3.percentOfDailyNeeds}}">
+							<input class="form-control" type="hidden" name="dietary_fiber" value="{{body.nutrition.nutrients.26.amount}}">
+							<input class="form-control" type="hidden" name="dietary_fiber_percent" value="{{body.nutrition.nutrients.26.percentOfDailyNeeds}}">
+							<input class="form-control" type="hidden" name="protein" value="{{body.nutrition.nutrients.7.amount}}">
+							<input class="form-control" type="hidden" name="protein_percent" value="{{body.nutrition.nutrients.7.percentOfDailyNeeds}}">
+							<input class="form-control" type="hidden" name="recipe" value="true">
+							<input class="form-control" type="hidden" name="url" value="/recipe/recipeinfo?id={{body.id}}">
+							<input type="submit" class="btn btn-primary btn-lg btn-block" value="Add Recipe">
+						</form>		
+						<a class="btn btn-primary btn-lg btn-block" href="/recipe/saverecipe?id={{body.id}}&title={{body.title}}" id={{body.id}}>Save Recipe</a>							
+					</div>
+					
+				</div>
+			</div>
+            <div class="col-md-3">
+				<section class="performance-facts">
+				  <header class="performance-facts__header">
+					<h1 class="performance-facts__title">Nutrition Facts</h1>
+					<p>Serving Size {{body.servings}}
+				  </header>
+				  <table class="performance-facts__table">
+					<thead>
+					  <tr>
+						<th colspan="2" class="small-info">
+						  Amount Per Serving
+						</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<th colspan="2">
+						  <b>Calories</b> {{body.nutrition.nutrients.0.amount}}
+						</th>
+					  </tr>
+					  <tr class="thick-row">
+						<td colspan="3" class="small-info">
+						  <b>% Daily Value*</b>
+						</td>
+					  </tr>
+					  <tr>
+						<th colspan="2">
+						  <b>Total Fat</b> {{body.nutrition.nutrients.1.amount}}g
+						</th>
+						<td>
+						  <b>{{body.nutrition.nutrients.1.percentOfDailyNeeds}}%</b>
+						</td>
+					  </tr>
+					  <tr>
+						<td class="blank-cell">
+						</td>
+						<th>
+						  Saturated Fat {{body.nutrition.nutrients.2.amount}}g
+						</th>
+						<td>
+						  <b>{{body.nutrition.nutrients.2.percentOfDailyNeeds}}%</b>
+						</td>
+					  </tr>
+					  <tr>
+						<th colspan="2">
+						  <b>Cholesterol</b> {{body.nutrition.nutrients.5.amount}}mg
+						</th>
+						<td>
+						  <b>{{body.nutrition.nutrients.5.percentOfDailyNeeds}}%</b>
+						</td>
+					  </tr>
+					  <tr>
+						<th colspan="2">
+						  <b>Sodium</b> {{body.nutrition.nutrients.6.amount}}mg
+						</th>
+						<td>
+						  <b>{{body.nutrition.nutrients.6.percentOfDailyNeeds}}%</b>
+						</td>
+					  </tr>
+					  <tr>
+						<th colspan="2">
+						  <b>Total Carbohydrate</b> {{body.nutrition.nutrients.3.amount}}g
+						</th>
+						<td>
+						  <b>{{body.nutrition.nutrients.3.percentOfDailyNeeds}}%</b>
+						</td>
+					  </tr>
+					  <tr>
+						<td class="blank-cell">
+						</td>
+						<th>
+						  Dietary Fiber {{body.nutrition.nutrients.26.amount}}g
+						</th>
+						<td>
+						  <b>{{body.nutrition.nutrients.26.percentOfDailyNeeds}}%</b>
+						</td>
+					  </tr>
+					  <tr>
+						<td class="blank-cell">
+						</td>
+						<th>
+						  Sugars {{body.nutrition.nutrients.4.amount}}g
+						</th>
+						<td>
+						</td>
+					  </tr>
+					  <tr class="thick-end">
+						<th colspan="2">
+						  <b>Protein</b> {{body.nutrition.nutrients.7.amount}}g
+						</th>
+						<td>
+						</td>
+					  </tr>
+					</tbody>
+				  </table>
+				</section>   
+            </div>
+			<div class="col-md-3">	
+				*Percent Daily Values are based on a 2000 calorie diet. Your daily values may be higher or lower depending on your calorie needs.
+			</div>
+		</div>		
+ </div>

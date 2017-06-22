@@ -1,0 +1,25 @@
+<div class="container">
+    <hgroup class="mb20">
+		<h1>Search Results</h1>
+		<h2 class="lead"><strong class="text-danger">{{hits.length}}</strong> results were found for the search for <strong class="text-danger">{{search.query}}</strong></h2>								
+	</hgroup>
+	{{#each hits}}	
+		<section class="col-xs-12 col-sm-6 col-md-12">
+			<article class="search-result row">
+				<div class="col-xs-12 col-sm-12 col-md-2">
+					<ul class="meta-search">
+						<li><i class="glyphicon glyphicon-calendar"></i> <span>{{fields.updated_at}}</span></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-10 excerpet">
+					<h3><a href="/search/food?id={{this._id}}" title="">{{fields.item_name}}</a></h3>
+					<p>Brand Name: {{fields.brand_name}}</p>		
+					<p>Calories: {{fields.nf_calories}}</p>
+					<p>Serving Quantity: {{fields.nf_serving_size_qty}} {{fields.nf_serving_size_unit}}</p>		
+					<span class="plus"><a href="/search/food?id={{this._id}}" title="Add {{fields.item_name}}" id="{{this._id}}"><i class="glyphicon glyphicon-plus"></i></a></span>
+				</div>
+				<span class="clearfix borda"></span>
+			</article>
+		</section>
+	{{/each}}
+</div>

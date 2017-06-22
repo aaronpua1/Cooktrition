@@ -1,0 +1,62 @@
+<div id="wrapper">
+	<div class="navbar-default sidebar" role="navigation">
+		<div class="sidebar-nav navbar-collapse">
+			<h4 class="text-center">Cuisine Type</h4>
+			<ul class="nav list-group" id="side-menu">
+				<li class="list-group-item">
+					<a href="/recipe/searchrecipes?id=African" id="African">African</a>
+					<a href="/recipe/searchrecipes?id=Chinese" id="Chinese">Chinese</a>
+					<a href="/recipe/searchrecipes?id=Japanese" id="Japanese">Japanese</a>
+					<a href="/recipe/searchrecipes?id=Korean" id="Korean">Korean</a>
+					<a href="/recipe/searchrecipes?id=Vienamese" id="Vienamese">Vienamese</a>
+					<a href="/recipe/searchrecipes?id=Thai" id="Thai">Thai</a>
+					<a href="/recipe/searchrecipes?id=Indian" id="Indian">Indian</a>
+					<a href="/recipe/searchrecipes?id=British" id="British">British</a>
+					<a href="/recipe/searchrecipes?id=Irish" id="Irish">Irish</a>
+					<a href="/recipe/searchrecipes?id=French" id="French">French</a>
+					<a href="/recipe/searchrecipes?id=Italian" id="Italian">Italian</a>
+					<a href="/recipe/searchrecipes?id=Mexican" id="Mexican">Mexican</a>
+					<a href="/recipe/searchrecipes?id=Spanish" id="Spanish">Spanish</a>
+					<a href="/recipe/searchrecipes?id=Middle&Eastern" id="Middle&Eastern">Middle Eastern</a>
+					<a href="/recipe/searchrecipes?id=Jewish" id="Jewish">Jewish</a>
+					<a href="/recipe/searchrecipes?id=American" id="American">American</a>
+					<a href="/recipe/searchrecipes?id=Cajun" id="Cajun">Cajun</a>
+					<a href="/recipe/searchrecipes?id=Southern" id="Southern">Southern</a>
+					<a href="/recipe/searchrecipes?id=Greek" id="Greek">Greek</a>
+					<a href="/recipe/searchrecipes?id=German" id="German">German</a>
+					<a href="/recipe/searchrecipes?id=Nordic" id="Nordic">Nordic</a>
+					<a href="/recipe/searchrecipes?id=Eastern&European" id="Eastern&European">Eastern European</a>
+					<a href="/recipe/searchrecipes?id=Caribbean" id="Caribbean">Caribbean</a>
+					<a href="/recipe/searchrecipes?id=Latin&American" id="Latin&American">Latin American</a>
+				</li>
+			</ul>
+		</div>
+		<!-- /.sidebar-collapse -->
+	</div>
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Recommended Recipes</h1>
+				{{#each results}}	
+					<section class="col-xs-12 col-sm-6 col-md-12">
+						<article class="search-result row">
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<a href="/recipe/recipeinfo?id={{this.id}}" title="{{this.title}}" class="thumbnail" id="{{this.id}}"><img src={{this.image}} alt="" /></a>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-2">
+								<p>Calories: {{this.calories}}</p>
+								<p>Total Fat: {{this.fat}}</p>		
+								<p>Carbohydrate: {{this.carbs}}</p>	
+								<p>Protein: {{this.protein}}</p>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+								<h3><a href="/recipe/recipeinfo?id={{this.id}}" title="">{{this.title}}</a></h3>		
+							</div>
+							<span class="clearfix borda"></span>
+						</article>
+					</section>
+				{{/each}}
+			</div>
+		</div>           
+	</div>
+</div> 

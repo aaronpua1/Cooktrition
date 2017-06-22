@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cooktrition</title>
+  <link rel="icon" type="image/png" href="/img/cooktrition.png"/>
+  <link rel="stylesheet" type="text/css" href="/css/reset.css">  
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/css/sticky-footer.css">
+  <link rel="stylesheet" type="text/css" href="/css/nutritionalFacts.css">
+  <link href="/css/metisMenu/metisMenu.min.css" rel="stylesheet">
+  <link href="/css/sb-admin-2.css" rel="stylesheet">
+  <link href="/css/morrisjs/morris.css" rel="stylesheet">
+  <link href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <!--- Header start --->
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> Cooktrition</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            {{#if user}}
+            <li><a href="/">Dashboard</a></li>
+            <li><a href="/recipe/recipesbynutrition">Recommended Recipes</a></li>
+            <li><a href="/users/logout">Logout</a></li>			
+			<div class="col-sm-10 col-md-5 pull-center">
+				<form method="post" class="navbar-form" role="search" action="/search/searchfood">
+					<div class="input-group stylish-input-group">
+						<input type="text" class="form-control" placeholder="Search Foods" name="search_query">
+						<div class="input-group-btn">
+							<button class="btn btn-default" type="submit">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>			
+            {{else}}
+            <li><a href="/users/login">Login</a></li>
+            <li><a href="/users/register">Register</a></li>
+            {{/if}}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+  </header>
+  <!--- Header end --->
+  <!--- Main start --->
+  <main>
+    <div class="container-fluid">
+      {{{body}}}
+    </div>
+    <div class="container container-table">
+      <div class="row vertical-center-row">
+        <div class="text-center col-md-4 col-md-offset-4">
+          {{#if success_msg}}
+            <div class="alert alert-success" role="alert">{{success_msg}}</div>
+          {{/if}}
+          {{#if error_msg}}
+            <div class="alert alert-danger" role="alert">{{error_msg}}</div>
+          {{/if}}
+          {{#if error}}
+            <div class="alert alert-danger" role="alert">{{error}}</div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </main>
+  <!--- Main end --->
+  <!--- Footer Start --->
+  <!--- Footer Start --->
+  <footer class="footer">
+     <div class="container-fluid">
+       <h5 class="text-center">&copy; 2016 Cooktrition, Inc.</h5>
+     </div>
+  </footer>
+  <!--- Footer end --->
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>  
+</body>
+</html>

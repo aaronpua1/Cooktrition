@@ -1,0 +1,261 @@
+<body>
+	<div id="wrapper">
+		<div id="page-wrapper">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header"><span style="text-transform: uppercase;">{{username}}'s Dashboard</span></h1>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-history fa-5x" aria-hidden="true"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge">Food Report</div>
+								</div>
+							</div>
+						</div>
+						<a href="/get-food">
+							<div class="panel-footer">
+								<span class="pull-left">View Details</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="panel panel-green">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-calendar fa-5x" aria-hidden="true"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge">Nutrition History</div>
+								</div>
+							</div>
+						</div>
+						<a href="/get-history">
+							<div class="panel-footer">
+								<span class="pull-left">View Details</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="panel panel-yellow">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-cutlery fa-5x" aria-hidden="true"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge">Browse Recipes</div>
+								</div>
+							</div>
+						</div>
+						<a href="/recipe/recipesbynutrition">
+							<div class="panel-footer">
+								<span class="pull-left">View Details</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<div class="col-lg-3">				
+					<!-- /.panel -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-bar-chart-o fa-fw"></i> Daily Nutrition
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-lg-4">
+									<section class="performance-facts">
+									  <header class="performance-facts__header">
+										<h1 class="performance-facts__title">Daily Nutrition Log</h1>
+										<p>Date: {{date}}</p>
+									  </header>
+									  <table class="performance-facts__table">
+										<thead>
+										  <tr>
+											<th colspan="5" class="small-info">
+											  Amount Per Serving
+											</th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr>
+											<th colspan="2">
+											  <b>Calories</b> {{calories}}
+											</th>
+											<td>
+											  {{caloriespercent}}%
+											</td>
+										  </tr>
+										  <tr class="thick-row">
+											<td colspan="3" class="small-info">
+											  <b>% Daily Value*</b>
+											</td>
+										  </tr>
+										  <tr>
+											<th colspan="2">
+											  <b>Total Fat</b> {{totalfat}}g
+											</th>
+											<td>
+											  <b>{{totalfatpercent}}%</b>
+											</td>
+										  </tr>
+										  <tr>
+											<td class="blank-cell">
+											</td>
+											<th>
+											  Saturated Fat {{saturatedfat}}g
+											</th>
+											<td>
+											  <b>{{saturatedfatpercent}}%</b>
+											</td>
+										  </tr>
+										  <tr>
+											<th colspan="2">
+											  <b>Cholesterol</b> {{cholesterol}}mg
+											</th>
+											<td>
+											  <b>{{cholesterolpercent}}%</b>
+											</td>
+										  </tr>
+										  <tr>
+											<th colspan="2">
+											  <b>Sodium</b> {{sodium}}mg
+											</th>
+											<td>
+											  <b>{{sodiumpercent}}%</b>
+											</td>
+										  </tr>
+										  <tr>
+											<th colspan="2">
+											  <b>Total Carbohydrate</b> {{totalcarbohydrate}}g
+											</th>
+											<td>
+											  <b>{{totalcarbohydratepercent}}%</b>
+											</td>
+										  </tr>
+										  <tr>
+											<td class="blank-cell">
+											</td>
+											<th>
+											  Dietary Fiber {{dietaryfiber}}g
+											</th>
+											<td>
+											  <b>{{dietaryfiberpercent}}%</b>
+											</td>
+										  </tr>
+										  <tr class="thick-end">
+											<th colspan="2">
+											  <b>Protein</b> {{protein}}g
+											</th>
+											<td>
+												<b>{{proteinpercent}}%</b>
+											</td>
+										  </tr>										  
+										</tbody>
+									  </table>
+									</section>   									
+								</div>								
+							</div>	
+							<div class="col-lg-8">
+								*Percent Daily Values are based on a 2000 calorie diet. Your daily values may be higher or lower depending on your calorie needs.	
+							</div>
+							<!-- /.row -->
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+				</div>
+				<!-- /.col-lg-8 -->
+				<div class="col-lg-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-history" aria-hidden="true"></i> Daily Food History
+							<div class="pull-right">
+                                Click Item Link to Remove
+                            </div>
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<div class="list-group">
+								{{#each hits.foods}}
+									<a href="/removeitem?id={{itemname}}" class="list-group-item" id="{{itemname}}">
+										<i class="fa fa-cutlery" aria-hidden="true"></i> {{itemname}}
+										<span class="pull-right text-muted small"><em>{{date}}</em>
+										</span>
+									</a>
+								{{/each}}
+							</div>
+							<!-- /.list-group -->
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-history fa-fw"></i> Recipe History
+							<div class="pull-right">
+                                Click Recipe Link to View Recipe
+                            </div>
+						</div>
+						<div class="panel-body">
+							<div class="list-group">
+								{{#each recipes}}
+									<a href="{{url}}" class="list-group-item">
+										<i class="fa fa-cutlery" aria-hidden="true"></i> {{itemname}}
+										<span class="pull-right text-muted small"><em>{{date}}</em>
+										</span>
+									</a>
+								{{/each}}
+							</div>
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+				</div>
+				<!-- /.col-lg-4 -->
+			</div>
+			<!-- /.row -->
+		</div>
+	</div>
+	<!-- /#page-wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="../vendor/raphael/raphael.min.js"></script>
+    <script src="../vendor/morrisjs/morris.min.js"></script>
+    <script src="../data/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+</body>

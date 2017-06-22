@@ -1,0 +1,16 @@
+<div class="container">
+  <table class="table table-bordered">
+    <tr>
+      <th>Food Item</th>
+      <th>Brand Name</th>
+      <th>Date</th>
+    </tr>
+    {{#each items}}
+		<tr>
+		  <td>{{itemname}}</td>
+		  <td>{{itembrand}}</td>
+		  <td>{{date}}</td>
+		</tr>
+    {{/each}}
+  </table>
+</div>

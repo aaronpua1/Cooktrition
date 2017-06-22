@@ -1,0 +1,146 @@
+<body>
+	<div id="wrapper">
+		<div id="page-wrapper">	
+			{{#each items}}
+				<!-- /.row -->
+				<div class="row">
+					<div class="col-lg-3">				
+						<!-- /.panel -->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<i class="fa fa-bar-chart-o fa-fw"></i> Daily Nutrition for {{date}}
+							</div>
+							<!-- /.panel-heading -->
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-lg-4">
+										<section class="performance-facts">
+										  <header class="performance-facts__header">
+											<h1 class="performance-facts__title">Daily Nutrition Log</h1>
+											<p>Date: {{date}}</p>
+										  </header>
+										  <table class="performance-facts__table">
+											<thead>
+											  <tr>
+												<th colspan="5" class="small-info">
+												  Amount Per Serving
+												</th>
+											  </tr>
+											</thead>
+											<tbody>
+											  <tr>
+												<th colspan="2">
+												  <b>Calories</b> {{calories}}
+												</th>
+												<td>
+												  {{caloriespercent}}%
+												</td>
+											  </tr>
+											  <tr class="thick-row">
+												<td colspan="3" class="small-info">
+												  <b>% Daily Value*</b>
+												</td>
+											  </tr>
+											  <tr>
+												<th colspan="2">
+												  <b>Total Fat</b> {{totalfat}}g
+												</th>
+												<td>
+												  <b>{{totalfatpercent}}%</b>
+												</td>
+											  </tr>
+											  <tr>
+												<td class="blank-cell">
+												</td>
+												<th>
+												  Saturated Fat {{saturatedfat}}g
+												</th>
+												<td>
+												  <b>{{saturatedfatpercent}}%</b>
+												</td>
+											  </tr>
+											  <tr>
+												<th colspan="2">
+												  <b>Cholesterol</b> {{cholesterol}}mg
+												</th>
+												<td>
+												  <b>{{cholesterolpercent}}%</b>
+												</td>
+											  </tr>
+											  <tr>
+												<th colspan="2">
+												  <b>Sodium</b> {{sodium}}mg
+												</th>
+												<td>
+												  <b>{{sodiumpercent}}%</b>
+												</td>
+											  </tr>
+											  <tr>
+												<th colspan="2">
+												  <b>Total Carbohydrate</b> {{totalcarbohydrate}}g
+												</th>
+												<td>
+												  <b>{{totalcarbohydratepercent}}%</b>
+												</td>
+											  </tr>
+											  <tr>
+												<td class="blank-cell">
+												</td>
+												<th>
+												  Dietary Fiber {{dietaryfiber}}g
+												</th>
+												<td>
+												  <b>{{dietaryfiberpercent}}%</b>
+												</td>
+											  </tr>
+											  <tr class="thick-end">
+												<th colspan="2">
+												  <b>Protein</b> {{protein}}g
+												</th>
+												<td>
+													<b>{{proteinpercent}}%</b>
+												</td>
+											  </tr>										  
+											</tbody>
+										  </table>
+										</section>   									
+									</div>								
+								</div>	
+								<div class="col-lg-8">
+									*Percent Daily Values are based on a 2000 calorie diet. Your daily values may be higher or lower depending on your calorie needs.	
+								</div>
+								<!-- /.row -->
+							</div>
+							<!-- /.panel-body -->
+						</div>
+						<!-- /.panel -->
+					</div>
+					<!-- /.col-lg-8 -->
+					<div class="col-lg-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<i class="fa fa-history" aria-hidden="true"></i> Daily Food History for {{date}}
+							</div>
+							<!-- /.panel-heading -->
+							<div class="panel-body">
+								<div class="list-group">
+									{{#each foods.fooditems}}
+										<a href="#" class="list-group-item">
+											<i class="fa fa-cutlery" aria-hidden="true"></i> {{item}}
+											<span class="pull-right text-muted small"><em>{{date}}</em>
+											</span>
+										</a>
+									{{/each}}
+								</div>
+								<!-- /.list-group -->
+							</div>
+							<!-- /.panel-body -->
+						</div>
+					</div>
+					<!-- /.col-lg-4 -->
+				</div>
+				<!-- /.row -->
+			{{/each}}
+		</div>
+	</div>
+</body>

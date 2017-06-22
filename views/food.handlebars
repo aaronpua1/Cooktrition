@@ -1,0 +1,143 @@
+ <div class="container">
+        <div class="row">
+			<div class="col-md-7">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="{{foods.0.photo.thumb}}" alt="">
+                    <div class="caption-full">                        
+                        <h3>{{foods.0.food_name}}</h3>
+						<h4>{{foods.0.brand_name}}</h4>
+                    </div>
+					<div class="text-center">	
+						<form method="post" action="/">
+							<input class="form-control" type="hidden" name="item_name" value="{{foods.0.food_name}}">
+							<input class="form-control" type="hidden" name="item_brand" value="{{foods.0.brand_name}}">
+							<input class="form-control" type="hidden" name="id" value="{{foods.0._id}}">
+							<input class="form-control" type="hidden" name="calories" value="{{foods.0.nf_calories}}">
+							<input class="form-control" type="hidden" name="calories_percent" value="{{foods.0.percentages.calories}}">
+							<input class="form-control" type="hidden" name="total_fat" value="{{foods.0.nf_total_fat}}">
+							<input class="form-control" type="hidden" name="total_fat_percent" value="{{foods.0.percentages.total_fat}}">
+							<input class="form-control" type="hidden" name="saturated_fat" value="{{foods.0.nf_saturated_fat}}">
+							<input class="form-control" type="hidden" name="saturated_fat_percent" value="{{foods.0.percentages.saturated_fat}}">
+							<input class="form-control" type="hidden" name="cholesterol" value="{{foods.0.nf_cholesterol}}">
+							<input class="form-control" type="hidden" name="cholesterol_percent" value="{{foods.0.percentages.cholesterol}}">
+							<input class="form-control" type="hidden" name="sodium" value="{{foods.0.nf_sodium}}">
+							<input class="form-control" type="hidden" name="sodium_percent" value="{{foods.0.percentages.sodium}}">
+							<input class="form-control" type="hidden" name="total_carbohydrate" value="{{foods.0.nf_total_carbohydrate}}">
+							<input class="form-control" type="hidden" name="total_carbohydrate_percent" value="{{foods.0.percentages.total_carbohydrate}}">
+							<input class="form-control" type="hidden" name="dietary_fiber" value="{{foods.0.nf_dietary_fiber}}">
+							<input class="form-control" type="hidden" name="dietary_fiber_percent" value="{{foods.0.percentages.dietary_fiber}}">
+							<input class="form-control" type="hidden" name="protein" value="{{foods.0.nf_protein}}">
+							<input class="form-control" type="hidden" name="protein_percent" value="{{foods.0.percentages.protein}}">
+							<input class="form-control" type="hidden" name="recipe" value="false">							
+							<input type="submit" class="btn btn-primary btn-lg btn-block" value="Add Food Item">
+						</form>
+					</div>
+				</div>
+			</div>
+            <div class="col-md-3">
+				{{#each foods}}
+					<section class="performance-facts">
+					  <header class="performance-facts__header">
+						<h1 class="performance-facts__title">Nutrition Facts</h1>
+						<p>Serving Size {{serving_qty}} {{serving_unit}}
+					  </header>
+					  <table class="performance-facts__table">
+						<thead>
+						  <tr>
+							<th colspan="3" class="small-info">
+							  Amount Per Serving
+							</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<th colspan="2">
+							  <b>Calories</b> {{nf_calories}}
+							</th>
+							<td>
+							  Calories from Fat 130
+							</td>
+						  </tr>
+						  <tr class="thick-row">
+							<td colspan="3" class="small-info">
+							  <b>% Daily Value*</b>
+							</td>
+						  </tr>
+						  <tr>
+							<th colspan="2">
+							  <b>Total Fat</b> {{nf_total_fat}}g
+							</th>
+							<td>
+							  <b>{{percentages.total_fat}}%</b>
+							</td>
+						  </tr>
+						  <tr>
+							<td class="blank-cell">
+							</td>
+							<th>
+							  Saturated Fat {{nf_saturated_fat}}g
+							</th>
+							<td>
+							  <b>{{percentages.saturated_fat}}%</b>
+							</td>
+						  </tr>
+						  <tr>
+							<th colspan="2">
+							  <b>Cholesterol</b> {{nf_cholesterol}}mg
+							</th>
+							<td>
+							  <b>{{percentages.cholesterol}}%</b>
+							</td>
+						  </tr>
+						  <tr>
+							<th colspan="2">
+							  <b>Sodium</b> {{nf_sodium}}mg
+							</th>
+							<td>
+							  <b>{{percentages.sodium}}%</b>
+							</td>
+						  </tr>
+						  <tr>
+							<th colspan="2">
+							  <b>Total Carbohydrate</b> {{nf_total_carbohydrate}}g
+							</th>
+							<td>
+							  <b>{{percentages.total_carbohydrate}}%</b>
+							</td>
+						  </tr>
+						  <tr>
+							<td class="blank-cell">
+							</td>
+							<th>
+							  Dietary Fiber {{nf_dietary_fiber}}g
+							</th>
+							<td>
+							  <b>{{percentages.dietary_fiber}}%</b>
+							</td>
+						  </tr>
+						  <tr>
+							<td class="blank-cell">
+							</td>
+							<th>
+							  Sugars {{nf_sugars}}g
+							</th>
+							<td>
+							</td>
+						  </tr>
+						  <tr class="thick-end">
+							<th colspan="2">
+							  <b>Protein</b> {{nf_protein}}g
+							</th>
+							<td>
+							</td>
+						  </tr>
+						</tbody>
+					  </table>
+					</section>
+				{{/each}}    
+            </div>
+			<div class="col-md-2">	
+				*Percent Daily Values are based on a 2000 calorie diet. Your daily values may be higher or lower depending on your calorie needs.
+			</div>
+		</div>		
+ </div>
